@@ -10,20 +10,15 @@ const Hero = () => (
     <HeroAvatar
       title={
         <>
-          Hi there, I'm <GradientText>Ixartz</GradientText> 👋
+          Hi, We are the <GradientText>Bone detection Team</GradientText> 👋
         </>
       }
       description={
         <>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus{' '}
-          <a className="text-cyan-400 hover:underline" href="/">
-            malesuada
-          </a>{' '}
-          nisi tellus, non imperdiet nisi tempor at. Lorem ipsum dolor sit amet,{' '}
-          <a className="text-cyan-400 hover:underline" href="/">
-            consectetur
-          </a>{' '}
-          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+          We are Maria, Irene, Carmen, Jorge, and Sergio. A team of students
+          from the Master's program in Industrial Robotics and Automation at the
+          Polytechnic University of Madrid. In this project, we have developed a
+          system for bone detection in medical images.
         </>
       }
       avatar={
