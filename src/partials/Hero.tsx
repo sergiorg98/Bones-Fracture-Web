@@ -23,7 +23,7 @@ const Hero = () => (
       }
       avatar={
         <img
-          className="w-80"
+          className="w-96"
           src="/assets/images/intro.webp"
           alt="Avatar image"
           loading="lazy"
