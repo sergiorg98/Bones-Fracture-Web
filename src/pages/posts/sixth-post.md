@@ -19,7 +19,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vero esse non m
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vero esse non molestias eos excepturi, inventore atque cupiditate. Sed voluptatem quas omnis culpa, et odit.
 
-## H2 For example
+## H2 For efxample
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vero esse non molestias eos excepturi, inventore atque cupiditate. Sed voluptatem quas omnis culpa, et odit.
 

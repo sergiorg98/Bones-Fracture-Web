@@ -50,9 +50,7 @@ const ProjectList = () => (
         img={{ src: '/assets/images/project-maps.png', alt: 'Project Maps' }}
         category={
           <>
-            <Tags color={ColorTags.FUCHSIA}>Astro.js</Tags>
-            <Tags color={ColorTags.INDIGO}>Bootstrap</Tags>
-            <Tags color={ColorTags.ROSE}>TypeScript</Tags>
+            <Tags color={ColorTags.FUCHSIA}>Medical Knowledge</Tags>
           </>
         }
       />
