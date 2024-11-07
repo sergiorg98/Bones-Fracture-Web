@@ -19,7 +19,7 @@ const Hero = () => (
           We are Maria, Irene, Carmen, Jorge, and Sergio. A team of students
           from the Master's program in Industrial Robotics and Automation at the
           Polytechnic University of Madrid. In this project, we have developed a
-          system for bone detection in medical images.
+          system for bone fracture detection in medical images.
         </>
       }
       avatar={
