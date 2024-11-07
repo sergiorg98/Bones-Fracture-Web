@@ -6,15 +6,16 @@ import {
 
 const CTA = () => (
   <Section>
-    <hr />
-    <Newsletter
-      title={
-        <>
-          Subscribe to our <GradientText>Newsletters</GradientText>
-        </>
-      }
-      description="In it, you will receive all the latest updates on our research and stay up to date with the latest news."
-    />
+    <div className="border-t border-gray-600 pt-5">
+      <Newsletter
+        title={
+          <>
+            Subscribe to our <GradientText>Newsletters</GradientText>
+          </>
+        }
+        description="In it, you will receive all the latest updates on our research and stay up to date with the latest news."
+      />
+    </div>
   </Section>
 );
 

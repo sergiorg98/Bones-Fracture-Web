@@ -1,9 +1,10 @@
 import {
   GradientText,
-  HeroAvatar,
   HeroSocial,
   Section,
 } from 'astro-boilerplate-components';
+
+import { HeroAvatar } from '../components/HeroAvatar';
 
 const Hero = () => (
   <Section>
