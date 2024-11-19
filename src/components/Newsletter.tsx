@@ -19,7 +19,12 @@ const Newsletter = (props: INewsletterProps) => (
         method="POST"
         data-netlify="true"
       >
-        <input className="w-full appearance-none bg-slate-800 focus:outline-none" />
+        <input
+          className="w-full appearance-none bg-slate-800 focus:outline-none"
+          name="email"
+          type="email"
+          placeholder="Enter your email"
+        />
 
         <button
           className="ml-2 shrink-0 rounded-full bg-gradient-to-br from-sky-500 to-cyan-400 px-3 py-1 text-sm font-medium hover:from-sky-700 hover:to-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-600/50"
