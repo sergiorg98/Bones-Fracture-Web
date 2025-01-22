@@ -43,7 +43,7 @@ By using YOLO with preprocessing techniques like segmentation, we can achieve:
 - **Reduced errors compared to contour-based methods**.
 
 Here is an example of YOLO detecting fractures:  
-![YOLO Trained Example](path-to-your-image-yolo-example.png)  
+![YOLO Trained Example]
 *Hover over the detected areas to see explanations, or click on the image to explore YOLO's functionality in detail.*
 
 ---
