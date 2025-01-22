@@ -10,7 +10,7 @@ imgAlt: 'Image post'
 
 So far, we have been working on image preprocessing and have been
 
-## Color Space Selection(Prueba)
+## Color Space Selection
 
 We have been analyzing different color spaces and have realized that the XYZ color space filters the flesh quite well and leaves the image with a clean bone.
 Here you can see an example.
