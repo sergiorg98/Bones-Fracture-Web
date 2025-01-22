@@ -46,7 +46,7 @@ This technique uses vertical and horizontal lines projected over the X-ray. Each
 
 **Problem:**  
 While effective for specific bones, this technique fails with complex X-rays, such as hands or areas with multiple bones. For example, it could incorrectly detect the spaces between fingers as fractures.  
-![Projection Analysis Problem]((/assets/images/Proyection_mal.jpg)  )  
+![Projection Analysis Problem](/assets/images/Proyection_mal.jpg  )  
 *Example of incorrect detection in a hand X-ray due to projection analysis.*
 
 ---
