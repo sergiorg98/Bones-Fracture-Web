@@ -22,14 +22,14 @@ const Navbar = () => (
                 stroke="#1C274C"
                 strokeWidth="1.5"
                 strokeLinecap="round"
-                stroke-linejoin="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M10.2322 10.2324V12.3537L12.3535 11.6466V13.0608L14.9996 12.5001"
                 stroke="#1C274C"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 strokeLinecap="round"
-                stroke-linejoin="round"
+                strokeLinejoin="round"
               />
             </svg>
           }
