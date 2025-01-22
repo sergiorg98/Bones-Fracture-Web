@@ -3,49 +3,93 @@ layout: '@/templates/BasePost.astro'
 title: Phase 1:Initial Results
 description: In this blog, we present the challenges and solutions encountered during the first phase of detecting bone fractures.
 pubDate: 2024-12-22T00:00:00Z
-imgSrc: '/assets/images/miniatura1.webp'
+imgSrc: '/assets/images/Contornos_bien.png'
 imgAlt: 'Image post'
 
 ---
+# Phase 1: Evaluation of Techniques for Fracture Detection
 
-In this phase, we explored the initial methods for detecting bone fractures. Our primary focus was on contour detection techniques, but we faced several challenges that pushed us to rethink our approach. Below, we discuss these issues and the solutions implemented.
+In the first phase of the project, we evaluated several techniques to identify fractures in X-rays. Below is a summary of the methods tested, their purpose, and the challenges encountered.
 
-# Phase 1: Fracture Detection Using Contours
+---
 
-In the initial phase of the project, we attempted to detect fractures using contour detection techniques. However, several challenges emerged:
+## Techniques Evaluated
 
-- **Specific X-ray analysis**: The approach required a very detailed and specific analysis of X-rays, increasing complexity.
-- **Fissures**: In cases where only fissures were present, contours failed to differentiate the bone parts clearly, making detection difficult.
+### 1. Evaluate Thresholding and Segmentation Techniques
+This technique involves isolating the bone from the rest of the X-ray using thresholding (to differentiate between light and dark areas) and segmentation methods.  
+**Purpose:** To preprocess the image, leaving it clean and focused only on the bone, ideally highlighting fractures.
 
-Below are two images illustrating the issues encountered:
+![Thresholding and Segmentation Example](/assets/images/Theresholding_segmentation.jpg)  
+*Example of basic segmentation and thresholding applied to an X-ray.*
 
-### Problem 1: Insufficient Contours
-![Contour Detection Issue]
-![XYZ Space image](/assets/images/contour_difficulty.jpg 'XYZ Space Bone Segmentation')
-*Hover over the image to zoom in and see how contour detection fails due to the low visibility of the fissure.*
+**Conclusion:**  
+This method showed potential for preprocessing, as it could simplify the image and isolate the fractured area. However, it was insufficient for detecting the fracture itself, requiring further analysis.
 
-### Problem 2: Errors in Contour Detection
-![Contour Detection Error]![XYZ Space image](/assets/images/contour_error.jpg 'XYZ Space Bone Segmentation')
-*Click on the image to see an example of how contour detection generated errors in an X-ray analysis.*
+---
+
+### 2. Evaluate Edge and Key Point Detection
+This approach focuses on detecting the edges and key points of the bone structure to locate fractures.  
+
+![Edge and Key Point Detection Example](/assets/images/Canny_buena_dettecion_bordes.jpg)  
+*Example of edge and key point detection applied to an X-ray.*
+
+**Problem:**  
+While this method highlighted edges, it struggled with low-contrast areas like fissures.  
+![Edge Detection Problem](/assets/images/Canny_mala_dettecion_bordes.jpg)  
+*Hover over the image to zoom in and see how edge detection fails to capture low-contrast fractures.*
+
+---
+
+### 3. Projection Analysis
+This technique uses vertical and horizontal lines projected over the X-ray. Each line stops when it crosses an object or reaches the edge of the image. This can help detect where fractures or separations occur.
+
+
+**Problem:**  
+While effective for specific bones, this technique fails with complex X-rays, such as hands or areas with multiple bones. For example, it could incorrectly detect the spaces between fingers as fractures.  
+![Projection Analysis Problem]((/assets/images/Proyection_mal.jpg)  )  
+*Example of incorrect detection in a hand X-ray due to projection analysis.*
+
+---
+
+### 4. YOLO (You Only Look Once)
+YOLO is a computer vision algorithm designed for real-time object detection. It divides the image into grids and predicts bounding boxes for objects. YOLO was tested as a potential solution for its ability to detect subtle features, such as fractures or fissures.
+
+**Why YOLO?**  
+YOLO provides:
+- Accurate detection, even for small fissures.
+- Real-time analysis capabilities.
+- Scalability for training with a wide range of X-rays.
+
+
+---
+
+## Summary of Problems
+
+After evaluating the techniques, the following challenges were identified:
+1. **Thresholding and Segmentation**: Useful for preprocessing but insufficient for detecting fractures directly.
+2. **Edge and Key Point Detection**: Struggled with low-contrast areas, making it unreliable for small fissures.
+3. **Projection Analysis**: Effective for single bones but problematic for areas with multiple bones, such as hands.
+4. **YOLO**: Demonstrated the highest potential, especially with preprocessing to clean the image and focus on fractures.
 
 ---
 
 ## Changing Focus: YOLO Implementation with Preprocessing
 
-After assessing the limitations of contour-based methods, we decided to implement **YOLO (You Only Look Once)**, an advanced computer vision algorithm for real-time object detection.
+After assessing the limitations of the previous methods, we shifted our focus to implementing **YOLO (You Only Look Once)**.
 
 ### What is YOLO, and Why is it Effective?
 
-YOLO is a model that divides an image into grids and predicts the regions where objects are located. This makes it ideal for identifying fractures, even in challenging cases like fissures.  
-By using YOLO with preprocessing techniques like segmentation, we can achieve:
+YOLO divides an image into grids and predicts the regions where objects are located. This makes it ideal for identifying fractures, even in challenging cases like fissures.  
+With YOLO and preprocessing techniques like segmentation, we can achieve:
 - **Accurate fracture detection**.
 - **Training the model to identify subtle fissures**.
 - **Reduced errors compared to contour-based methods**.
 
-Here is an example of YOLO detecting fractures:  
-![YOLO Trained Example]
-*Hover over the detected areas to see explanations, or click on the image to explore YOLO's functionality in detail.*
+[![YOLO Trained Example](/assets/images/web_yolo.png)](https://www.v7labs.com/blog/yolo-object-detection)  
+*Click on the image to learn more about YOLO and its functionality in detail.*
+
 
 ---
 
-This phase allowed us to shift toward a more efficient and adaptable model, paving the way for comprehensive analysis of bone fractures in X-rays.
+This evaluation phase helped us refine our approach and move toward a more robust and adaptable model for fracture detection.
+

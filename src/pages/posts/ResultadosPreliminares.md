@@ -1,9 +1,9 @@
 ---
 layout: '@/templates/BasePost.astro'
-title: Resultados preliminares
+title: Preliminary results
 description: In this blog, we show the first progress we are making in detecting bone fractures.
 pubDate: 2024-12-11T00:00:00Z
-imgSrc: '/assets/images/miniatura1.webp'
+imgSrc: '/assets/images/hueso.jpg'
 imgAlt: 'Image post'
 
 ---
