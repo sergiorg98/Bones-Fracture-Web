@@ -2,8 +2,8 @@
 layout: '@/templates/BasePost.astro'
 title: Phase 2:Advancements
 description: In this phase, we focused on refining the preprocessing techniques and making progress with YOLO-based detection. Below is a summary of the challenges, advancements, and next steps.
-pubDate: 2024-12-22T00:00:00Z
-imgSrc: '/assets/images/miniatura1.webp'
+pubDate: 2025-01-09T00:00:00Z
+imgSrc: '/assets/images/fractura4yolo.png'
 imgAlt: 'Image post'
 
 ---
@@ -24,16 +24,19 @@ Initially, preprocessing aimed to simplify the X-ray images by isolating bone st
   - High contrast may exaggerate certain features, leading to false positives.
   - Low contrast may obscure critical fractures or fissures.
 
-Here is an example of how inconsistent preprocessing affects X-ray analysis:  
-![Preprocessing Issues Example]IMAGEN MALA DEL PREPROCESADO  
-*Hover over the image to compare the variations in preprocessing results across different X-rays.*
+One of the main challenges we encountered was the inconsistency in preprocessing X-rays. Variations in contrast, brightness, and tissue visibility among patients made it difficult to generalize the preprocessing pipeline. These inconsistencies resulted in poor fracture detection in some cases.
+
+Here is an example of how incorrect preprocessing affected X-ray analysis and fracture detection:  
+![Preprocessing Issues Example](/assets/images/Preprocesameinto_error.jpg)  
+*The preprocessing failed to isolate the fracture accurately, making it challenging to detect.*
+
 
 ---
 
 ## Transition to Full Image Processing
 
 Given the challenges with preprocessing, we decided to work with the original X-ray images for fracture detection. A more detailed explanation of this technique can be found in the following article:  
-[**Phase 2 – Full Image Processing**]LINK AL POST DE PROCESAMEINTO
+[Go to Phase 2: Image Processing](../posts/Fase1.md)
 
 The key advantages of this approach include:
 - Retaining all features in the original image for YOLO to process.
@@ -72,10 +75,25 @@ To validate the effectiveness of the full image processing and YOLO, a dual-vali
    - YOLO will process the original X-rays, and its results will be compared against both ground truth data and the processing technique.
 
 ### Why YOLO is Critical
-Fractures, especially small fissures, are often subtle and difficult to detect. These cases require YOLO’s advanced detection capabilities to ensure no fractures are missed.  
-Here is an example of YOLO detecting a challenging fissure:  
-![YOLO Fissure Detection]IMAGEN DEL YOLO PRIMERA
-*Click on the image to explore YOLO's ability to detect subtle fractures.*
+
+Fractures, especially small fissures, are often subtle and difficult to detect. These cases require YOLO’s advanced detection capabilities to ensure no fractures are missed.
+
+Below are the initial results from the first YOLO training session:
+
+#### 1. Training Results
+The following graph shows the progress of the YOLO model during its first training phase. Metrics like loss and precision are tracked over epochs to assess performance:
+
+![YOLO Training Results](/assets/images/results_train_1.png)  
+*The training results showcase the model's improvement over epochs.*
+
+#### 2. Confusion Matrix
+The confusion matrix provides an overview of the model's performance in detecting different fracture types during validation. It highlights areas where the model excels and where improvements are needed:
+
+![YOLO Confusion Matrix](/assets/images/conf_matrix_train1.png)  
+*The confusion matrix displays the accuracy and misclassifications during validation.*
+
+By analyzing these results, we can refine the training process, adjust hyperparameters, and further improve YOLO's ability to detect fractures and fissures effectively.
+
 
 ---
 
